@@ -1,8 +1,8 @@
 <?php
 class Database{
   private $host = 'localhost';
-  private $user = 'root';
-  private $password = '';
+  private $user = 'admin';
+  private $password = 'admin';
   private $dbname = 'oop_course';
 
   private $dbh;
@@ -49,6 +49,7 @@ class Database{
   }
 
   public function execute(){
+
     return $this->stmt->execute();
   }
 
@@ -56,7 +57,7 @@ class Database{
     $this->dbh->lastInsertId();
   }
 
-  public function resultset(){
+  public function resultSet(){
     $this->execute();
     return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
   }
